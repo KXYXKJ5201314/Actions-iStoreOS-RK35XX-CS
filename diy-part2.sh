@@ -84,3 +84,7 @@ chmod 755 package/base-files/files/bin/coremark.sh
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+
+
+# 修改 perl 包的 Makefile
+sed -i 's#-I/usr/local/BerkeleyDB/include#-I/usr/include#' build_dir/target-aarch64_cortex-a53_musl/perl/perl-5.28.1/Makefile
