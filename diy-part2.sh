@@ -83,3 +83,10 @@ chmod 755 package/base-files/files/bin/coremark.sh
 # 定时限速插件
 git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 
+# mosdns
+rm -rf feeds/kenzo/luci-app-mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+git clone -b v5-lua https://github.com/sbwml/luci-app-mosdns.git feeds/luci/applications/luci-app-mosdns
+
+./scripts/feeds update -a
+./scripts/feeds install -a
